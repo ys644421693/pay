@@ -8,6 +8,7 @@
     <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet" />
     <script type="text/javascript" src="lib/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="lib/bootstrap.js"></script>
+    <script type="text/javascript" src="js/pay.js"></script>
     <link type="text/css" href="css/pay.css" rel="stylesheet">
 </head>
 <body class="container-fluid top-control">
@@ -22,14 +23,22 @@
                     <span>菲律宾五号花园街道</span>
                 </div>
                 <div class="star-record">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(1)" id="record-1"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(2)" id="record-2"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(3)" id="record-3"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(4)" id="record-4"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(5)" id="record-5"></span>
                 </div>
             </div>
         </section>
+        <div class="hr-line"></div>
+        <br/>
+        <div  class="top-control text-center">
+            <div class="input-group" id="acc-input-box">
+                <input type="number" class="form-control" placeholder="请输入您的金额" aria-describedby="basic-addon2">
+                <span class="php-big-circle">PHP</span>
+            </div>
+        </div>
     </div>
 </section>
 </body>
