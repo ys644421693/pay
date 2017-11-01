@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>支付</title>
-    <link type="text/css" href="css/bootstrap.css" rel="stylesheet" />
-    <link type="text/css" href="css/bootstrap-combined.min.css" rel="stylesheet" />
-    <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet" />
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"/>
     <script type="text/javascript" src="lib/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="lib/bootstrap.js"></script>
     <script type="text/javascript" src="js/pay.js"></script>
@@ -13,9 +13,9 @@
 </head>
 <body class="container-fluid top-control">
 <section class="row">
-    <div class="col-lg-offset-3 col-lg-6">
+    <div class="col-lg-12">
         <section class="text-center">
-            <img class="circle-head-big" src="img/head.jpg" />
+            <img class="circle-head-big" src="img/head.jpg"/>
             <div class="row-height">
                 <span class="title-name">西蒙的咖啡店</span>
                 <div class="pay-address">
@@ -33,11 +33,34 @@
         </section>
         <div class="hr-line"></div>
         <br/>
-        <div  class="top-control text-center">
+        <div class="top-control-50 text-center">
             <div class="input-group" id="acc-input-box">
                 <input type="number" class="form-control" placeholder="请输入您的金额" aria-describedby="basic-addon2">
-                <span class="php-big-circle">PHP</span>
+                <span class="php-big-circle" onclick="alert('12')">PHP</span>
             </div>
+        </div>
+
+        <div class="rmb-font text-center">
+            <span>当前货币汇率1</span>
+            <span class="php-small-circle">PHP</span>
+            <span>= 7.5689 </span>
+            <span> RMB</span>
+        </div>
+
+        <div class="text-center top-control-50">
+            <span class="big-font">产生手续费用:<money class="money-icon">￥</money></span>
+            <span class="big-font bottom-bord-black">7.8363</span>
+        </div>
+        <div class="text-center top-control-80">
+            <label class="big-font-50 count-amount">总计金额:</label>
+        </div>
+        <section class="text-center top-control-100">
+            <money class="big-font-150 money-icon">￥</money>
+            <span class="big-font-150 bottom-bord-weight count-amount">27.51</span>
+        </section>
+        <div class="text-center top-control-100">
+            <a href="javascript:void(0)" class="big-font-50 big-button-blue">
+                    立即支付</a>
         </div>
     </div>
 </section>
