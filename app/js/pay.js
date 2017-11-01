@@ -10,3 +10,7 @@ function record(index){
         $("#record-"+i).addClass("glyphicon-star-empty");
     }
 }
+
+function amountChange(element){
+    console.log($(element).val());
+}

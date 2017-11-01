@@ -176,6 +176,13 @@ body section:first-child {
 .big-font-150{
     font-size: 150px;
 }
+.big-font-120{
+    font-size: 120px;
+}
+.big-font-90{
+    font-size: 90px;
+}
+
 .bottom-bord-weight{
     color: #0e0e0e;
     border-bottom: #6DB1FE solid 10px;
@@ -217,4 +224,39 @@ body section:first-child {
 
 #acc-input-box input:-ms-input-placeholder {
     color: #7BB5EC;
+}
+
+.star-bg-full {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background: #ffffff url(../img/star.png) no-repeat 0% 0%;
+    background-size:200px 200px;
+}
+
+.star-bg-empty{
+    display: inline-block;
+    margin: 30px 15px 0px -15px;
+    width:60px;
+    height:60px;
+    position:relative;
+    background: #ffffff url(../img/start-empty.png) no-repeat;
+    background-size:46px 50px;
+    -moz-background-size:46px 50px;
+}
+
+.bottomControl {
+    height: 70px;
+    width: 100%;
+    text-align: center;
+}
+.star-bg-full {
+    margin: 15px 15px 0px -15px;
+    display: inline-block;
+    width:60px;
+    height:60px;
+    position:relative;
+    background: #ffffff url(../img/start-full.png) no-repeat;
+    background-size:46px 50px;
+    -moz-background-size:46px 50px;
 }

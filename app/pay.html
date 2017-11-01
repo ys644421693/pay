@@ -22,12 +22,14 @@
                     <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
                     <span>菲律宾五号花园街道</span>
                 </div>
-                <div class="star-record">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(1)" id="record-1"></span>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(2)" id="record-2"></span>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(3)" id="record-3"></span>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(4)" id="record-4"></span>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true" onclick="record(5)" id="record-5"></span>
+                <div class="text-center">
+                    <ul class="bottomControl">
+                        <li  class="star-bg-full"></li>
+                        <li  class="star-bg-full"></li>
+                        <li  class="star-bg-full"></li>
+                        <li  class="star-bg-empty"></li>
+                        <li  class="star-bg-empty"></li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -35,7 +37,7 @@
         <br/>
         <div class="top-control-50 text-center">
             <div class="input-group" id="acc-input-box">
-                <input type="number" class="form-control" placeholder="请输入您的金额" aria-describedby="basic-addon2">
+                <input type="number" class="form-control" placeholder="请输入您的金额" aria-describedby="basic-addon2" onkeyup="amountChange(this)">
                 <span class="php-big-circle" onclick="alert('12')">PHP</span>
             </div>
         </div>
@@ -54,9 +56,9 @@
         <div class="text-center top-control-80">
             <label class="big-font-50 count-amount">总计金额:</label>
         </div>
-        <section class="text-center top-control-100">
-            <money class="big-font-150 money-icon">￥</money>
-            <span class="big-font-150 bottom-bord-weight count-amount">27.51</span>
+        <section class="text-center top-control-100" id="amountNumber">
+            <money class="big-font-120 money-icon">￥</money>
+            <span class="big-font-120 bottom-bord-weight count-amount">211155117.51</span>
         </section>
         <div class="text-center top-control-100">
             <a href="javascript:void(0)" class="big-font-50 big-button-blue">
