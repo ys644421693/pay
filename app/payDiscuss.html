@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付评价</title>
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"/>
+    <script type="text/javascript" src="lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.js"></script>
+    <script type="text/javascript" src="js/pay.js"></script>
+    <link type="text/css" href="css/pay.css" rel="stylesheet">
+</head>
+<body class="container-fluid top-control">
+<section class="row">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="content-left row-div">
+                <img class="circle-head-big" src="img/head.jpg"/>
+            </div>
+
+            <div class="row-div" style="padding-left: 30px">
+                <span class="title-name big-font-50">西蒙的咖啡店</span>
+                <div class="pay-address">
+                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                    <span class="big-font-35">菲律宾五号花园街道</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="hr-line"></div>
+        <div class="text-center" id="star-dg">
+            <ul class="bottomControl-d">
+                <li class="star-bg-full star-d"></li>
+                <li class="star-bg-full star-d"></li>
+                <li class="star-bg-full star-d"></li>
+                <li class="star-bg-empty star-d"></li>
+                <li class="star-bg-empty star-d"></li>
+            </ul>
+            <div class="hr-height top-control">
+            </div>
+            <div class="top-control">
+                <p class="big-font-30 font-weight-bold">请选出您心目中最贴切的关键词</p>
+            </div>
+            <br>
+            <span class="big-font-30 text-color-g" style="margin-top: 10px">(最多3个)</span>
+
+            <br><br/>
+            <div class="discuss-box">
+                <ul>
+                    <li><div class="discuss-box-select-n"><input value="1" type="checkbox" id="discuss-type-1" onchange="discussChoose(this.value)"><label for="discuss-type-1">十分有趣</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="2" type="checkbox" id="discuss-type-2" onchange="discussChoose(this.value)"><label for="discuss-type-2">非常棒</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="3" type="checkbox" id="discuss-type-3" onchange="discussChoose(this.value)"><label for="discuss-type-3">太惊人了</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="4" type="checkbox" id="discuss-type-4" onchange="discussChoose(this.value)"><label for="discuss-type-4">十分美味，我喜欢</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="5" type="checkbox" id="discuss-type-5" onchange="discussChoose(this.value)"><label for="discuss-type-5">非常好</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="6" type="checkbox" id="discuss-type-6" onchange="discussChoose(this.value)"><label for="discuss-type-6">便宜</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="7" type="checkbox" id="discuss-type-7" onchange="discussChoose(this.value)"><label for="discuss-type-7">很贵</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="8" type="checkbox" id="discuss-type-8" onchange="discussChoose(this.value)"><label for="discuss-type-8">不喜欢</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="9" type="checkbox" id="discuss-type-9" onchange="discussChoose(this.value)"><label for="discuss-type-9">没意思</label></div></li>
+                </ul>
+            </div>
+
+            <div class="hr-height top-control">
+            </div>
+            <div class="top-control">
+                <p class="big-font-30 font-weight-bold">描述您对餐厅的整体印象</p>
+            </div>
+            <br>
+            <span class="big-font-30 text-color-g">(不超过40个词)</span>
+            <br>
+            <br>
+            <section class="box">
+                <div class="left_box"></div>
+                <div class="center_box">
+                    <textarea class="text-left" value="" id="description" maxlength="40" placeholder="输入你想说的话">
+                    </textarea>
+                    <div class="big-font-50 box">
+                        <div class="left_box text-left">
+                            <span class="fileinput-button">
+                                <ico class="glyphicon glyphicon-camera blue-pic-icon"></ico>
+                                <input type="file">
+                             </span>
+                            <span class="big-font-30 text-color-g">(最多上传3张照片)</span>
+                        </div>
+                       <div class="center_box">
+                       </div>
+                        <div class="right_box text-right">
+                            <img class="pic-small" src="img/timg.jpg">
+                            <img class="pic-small" src="img/timg1.jpg">
+                            <img class="pic-small" src="img/timg2.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="right_box"></div>
+            </section>
+            <div class="top-control-80 ">
+                <a href="javascript:void(0)" class="big-font-50 big-button-blue">
+                    上传评论</a>
+            </div>
+            <br/>
+            <br/>
+        </div>
+
+    </div>
+</section>
+</body>
+</html>
