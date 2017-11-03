@@ -35,33 +35,15 @@ $(function(){
     var ele = document.getElementById("slip");
     var mySlip = Slip(ele, "x").slider().width(350);
     var all = $("#slip").children("section").length;
-    var isJump = false;
-    mySlip.start(function(event) {
-            console.log('start');
-
-            // 事件对象
-            console.log(event);
-            // 当前坐标值
-            console.log(this.coord);
-        })
-        .move(function(event) {
-            console.log('move');
-
-        })
-        .end(function() {
-            console.log(this.page);
-            if (all > 3){
-                if(this.page+3 > all && !isJump){
-                    mySlip.jump(all-3);
-                    isJump =true;
-                }
-            }else{
-                mySlip.jump(0);
-            }
-
-            // 滑动方向
-            console.log(this.orient);
-        });
-
-    console.log($("#slip").children("section").length)
+    $("#slip").css("width",""+(all*360));
+    mySlip.end(function() {
+        if(all<=3 && this.page > 2){
+            mySlip.jump(0);
+        }else if( this.page + 2 == all){
+            mySlip.jump(this.page=this.page-2);
+        }else if(this.page + 1 == all){
+            mySlip.jump(this.page==this.page-3);
+        }
+        console.log(this.page);
+    });
 });

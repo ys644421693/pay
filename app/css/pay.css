@@ -478,6 +478,7 @@ body section:first-child {
 .list-content {
     vertical-align: top;
     height: 300px;
+    white-space:nowrap;
 }
 
 .recommend-box {
