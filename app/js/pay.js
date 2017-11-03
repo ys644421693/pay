@@ -1,4 +1,5 @@
 var dc = [];
+
 function record(index){
     var i =0;
     for( ;i <= index;i++){
@@ -30,3 +31,37 @@ function discussChoose(value){
         $("#discuss-type-" + value).parent().addClass("discuss-box-select");
     }
 }
+$(function(){
+    var ele = document.getElementById("slip");
+    var mySlip = Slip(ele, "x").slider().width(350);
+    var all = $("#slip").children("section").length;
+    var isJump = false;
+    mySlip.start(function(event) {
+            console.log('start');
+
+            // 事件对象
+            console.log(event);
+            // 当前坐标值
+            console.log(this.coord);
+        })
+        .move(function(event) {
+            console.log('move');
+
+        })
+        .end(function() {
+            console.log(this.page);
+            if (all > 3){
+                if(this.page+3 > all && !isJump){
+                    mySlip.jump(all-3);
+                    isJump =true;
+                }
+            }else{
+                mySlip.jump(0);
+            }
+
+            // 滑动方向
+            console.log(this.orient);
+        });
+
+    console.log($("#slip").children("section").length)
+});
