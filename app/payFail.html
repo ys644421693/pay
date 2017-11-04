@@ -8,15 +8,86 @@
     <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"/>
     <script type="text/javascript" src="lib/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="lib/bootstrap.js"></script>
+    <script type="text/javascript" src="lib/min.slip.js"></script>
     <script type="text/javascript" src="js/pay.js"></script>
     <link type="text/css" href="css/pay.css" rel="stylesheet">
 </head>
-<body class="container-fluid top-control">
+<body class="container-fluid top-control" onload="slipInit(1)">
 <section class="row">
     <div class="col-lg-12">
-        <section class="text-center">
-
+        <section class="text-center top-control-80">
+            <img src="img/error.png">
+            <br/><br/><br/>
+            <span class="font-weight-bold big-font-50">支付失败！</span>
+            <br/><br/><br/>
+            <span class="fail-reason">
+                您无法支付您的账单，因为您的手机无法连接到网络
+            </span>
+            <br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/>
+            <div class="top-control-150">
+                <a href="javascript:void(0)" class="big-font-50 big-button-blue">
+                    再次尝试</a>
+            </div>
         </section>
+        <br/>
+        <div class="hr-height-tip top-control">
+            <span>目前打折</span>
+        </div>
+        <br>
+        <div class="box-2">
+            <div class="left_box-2"></div>
+            <div class="center_box-2">
+                <div id="slip" class="list-content">
+                    <section class="recommend-box">
+                        <div class="recommend-box-content">
+                            <span class="recommend-box-title-y">$4564</span>
+                            <a href="javaScript:void(0)"><img class="recommend-box-img" src="img/timg-3.jpg"></a>
+                        </div>
+                        <title-box class="font-weight-bold">海洋公园</title-box>
+                        <div class="row">
+                            <span class="text-color-g big-font-25 col-sm-8 col-sm-offset-1">旅游景点</span>
+                            <span class="col-sm-2 text-right big-font-35 text-color-y">99$</span>
+                        </div>
+                    </section>
+                    <section class="recommend-box">
+                        <div class="recommend-box-content">
+                            <span class="recommend-box-title-y">$4564</span>
+                            <a href="javaScript:void(0)"><img class="recommend-box-img" src="img/timg-4.jpg"></a>
+                        </div>
+                        <title-box class="font-weight-bold">海洋公园</title-box>
+                        <div class="row">
+                            <span class="text-color-g big-font-25 col-sm-8 col-sm-offset-1">旅游景点</span>
+                            <span class="col-sm-2 text-right big-font-35 text-color-y">99$</span>
+                        </div>
+                    </section>
+                    <section class="recommend-box">
+                        <div class="recommend-box-content">
+                            <span class="recommend-box-title-y">$4564</span>
+                            <a href="javaScript:void(0)"><img class="recommend-box-img" src="img/timg-5.jpg"></a>
+                        </div>
+                        <title-box class="font-weight-bold">海洋公园</title-box>
+                        <div class="row">
+                            <span class="text-color-g big-font-25 col-sm-8 col-sm-offset-1">旅游景点</span>
+                            <span class="col-sm-2 text-right big-font-35 text-color-y">99$</span>
+                        </div>
+                    </section>
+                    <section class="recommend-box">
+                        <div class="recommend-box-content">
+                            <span class="recommend-box-title-y">$4564</span>
+                            <a href="javaScript:void(0)"><img class="recommend-box-img" src="img/timg-6.jpg"></a>
+                        </div>
+                        <title-box class="font-weight-bold">海洋公园</title-box>
+                        <div class="row">
+                            <span class="text-color-g big-font-25 col-sm-8 col-sm-offset-1">旅游景点</span>
+                            <span class="col-sm-2 text-right big-font-35 text-color-y">99$</span>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="right_box-2"></div>
+        </div>
+        <br/>
     </div>
 </section>
 </body>

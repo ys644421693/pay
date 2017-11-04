@@ -6,13 +6,9 @@ body {
     margin-right: 0px;
 }
 
-body section:first-child {
-    margin-left: 2px;
-    margin-right: 2px;
-}
-
 .top-control {
     margin-top: 30px;
+    line-height: 30px;
 }
 
 .top-control-10 {
@@ -40,11 +36,16 @@ body section:first-child {
     bottom: 0;
 }
 
-.circle-head-big {
+.circle-head-big, .circle-head-small {
     width: 220px;
     height: 220px;
     border: 1px solid #ddd;
     border-radius: 50%;
+}
+
+.circle-head-small {
+    width: 110px;
+    height: 110px;
 }
 
 .title-name {
@@ -172,6 +173,10 @@ body section:first-child {
     font-size: 30px;
 }
 
+.big-font-25 {
+    font-size: 25px;
+}
+
 .font-weight-bold {
     font-weight: bold;
 }
@@ -204,7 +209,7 @@ body section:first-child {
     font-size: 90px;
 }
 
-.text-color-g, .text-color-g-b {
+.text-color-g, .text-color-g-b, .fail-reason {
     color: #888a8b;
 }
 
@@ -227,7 +232,7 @@ body section:first-child {
     font-weight: bold;
 }
 
-.big-button-blue {
+.big-button-blue, .big-button-yellow {
     color: #ffffff;
     font-weight: bold;
     height: 100px;
@@ -242,8 +247,21 @@ body section:first-child {
     -moz-box-shadow: 0 0 30px rgba(109, 177, 254, 1);
 }
 
+.big-button-yellow {
+    background: #f5ca23;
+    box-shadow: 0 0 30px rgba(245, 202, 35, 1);
+    -webkit-box-shadow: 0 0 30px rgba(245, 202, 35, 1);
+    -moz-box-shadow: 0 0 30px rgba(245, 202, 35, 1);
+}
+
 .big-button-blue:hover, .empty-btn-s:hover {
     background: #71b2ff;
+    text-decoration: none;
+}
+
+.big-button-yellow:hover {
+    background: #f5ca23;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -267,9 +285,9 @@ body section:first-child {
     color: #7BB5EC;
 }
 
-.star-bg-empty {
+.star-bg-empty, .star-sm-empty {
     display: inline-block;
-    margin: 30px 15px 0px -15px;
+    margin: 30px 5px 0px -15px;
     width: 60px;
     height: 60px;
     position: relative;
@@ -284,8 +302,8 @@ body section:first-child {
     text-align: center;
 }
 
-.star-bg-full {
-    margin: 30px 15px 0px -15px;
+.star-bg-full, .star-sm-full {
+    margin: 30px 5px 0px -15px;
     display: inline-block;
     width: 60px;
     height: 60px;
@@ -293,6 +311,19 @@ body section:first-child {
     background: #ffffff url(../img/start-full.png) no-repeat;
     background-size: 46px 50px;
     -moz-background-size: 46px 50px;
+}
+
+.bottomControl-small {
+    height: 60px;
+    width: 100%;
+    margin: -25px 0px 0px 15px;
+}
+
+.star-sm-full, .star-sm-empty {
+    width: 40px;
+    height: 40px;
+    background-size: 30px;
+    -moz-background-size: 30px;
 }
 
 .recommend-list {
@@ -309,7 +340,7 @@ body section:first-child {
 }
 
 .content-left {
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
 .row-div {
@@ -337,7 +368,7 @@ body section:first-child {
 }
 
 .hr-height-tip {
-    padding-left: 30px;
+    padding-left: 40px;
     font-weight: bold;
     line-height: 65px;
     font-size: 25px;
@@ -395,7 +426,7 @@ body section:first-child {
     font-size: 40px;
 }
 
-.big-font-35 {
+.big-font-35, .fail-reason {
     font-size: 35px;
 }
 
@@ -456,14 +487,18 @@ body section:first-child {
     -ms-filter: 'alpha(opacity=0)';
 }
 
-.text-color-y {
+.text-color-y, .recommend-box-title-y {
     color: #f5ca23;
 }
 
-.box-2 {
+.box-2, .m-row {
     width: 100%;
     display: flex;
-    height: 300px;
+}
+
+.discuss-box-img {
+    width: 100%;
+    display: inline-block;
 }
 
 .left_box-2, .right_box-2 {
@@ -471,20 +506,20 @@ body section:first-child {
 }
 
 .center_box-2 {
-    height: 300px;
     overflow: hidden;
 }
 
 .list-content {
     vertical-align: top;
+    white-space: nowrap;
+}
+
+#slip-pk, .list-content, .recommend-box, .center_box-2, .box-2 {
     height: 300px;
-    white-space:nowrap;
 }
 
 .recommend-box {
-    width: 330px;
     height: 300px;
-    margin-left: 5px;
     padding: 20px 20px 20px 20px;
 }
 
@@ -494,23 +529,134 @@ body section:first-child {
     border-radius: 20px;
 }
 
-.recommend-box-content {
+.recommend-box-content, .red-package {
     position: relative;
 }
 
-.recommend-box-title {
+.recommend-box-title, .recommend-box-title-y {
     position: absolute;
     font-size: 20px;
     color: #ffffff;
     padding: 2px 10px 2px 10px;
     background-color: #71b2ff;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 10px;
+}
+
+.red-package-amount {
+    position: absolute;
+    font-size: 20px;
+    width: 412px;
+    height: 222px;
+    margin-top: 206px;
+    margin-left: 130px;
+    vertical-align: middle;
+    background: url("../img/amount-panel.png") no-repeat;
+    transform: rotate(9deg);
+    -ms-transform: rotate(9deg); /* Internet Explorer */
+    -moz-transform: rotate(9deg); /* Firefox */
+    -webkit-transform: rotate(9deg); /* Safari 和 Chrome */
+    -o-transform: rotate(9deg);
+}
+
+.recommend-box-title-y {
+    text-decoration: line-through;
+    color: #ffffff;
+    background-color: #ffd04d;
 }
 
 .recommend-box title-box {
     font-size: 30px;
     color: #585858;
     line-height: 45px;
+}
+
+#slip {
+    margin-left: 20px;
+}
+
+.m-col-sm-3 {
+    width: 20%;
+}
+
+.m-col-sm-6 {
+    width: 80%;
+}
+
+.sm-head-s {
+    margin-left: 35%;
+}
+
+.m-row {
+    clear: both;
+    margin-top: 30px;
+}
+
+.discuss-text-show {
+    font-size: 30px;
+    line-height: 40px;
+    color: #888a8b;
+    width: 90%;
+}
+
+.discuss-box-border {
+    border-bottom: solid #888a8b 2px;
+    margin-bottom: 10px;
+}
+
+.pic-bg-cell {
+    width: 150px;
+    height: 150px;
+    margin-right: 10%;
+}
+
+.discuss-box-img {
+    margin-bottom: 20px;
+}
+
+.fail-reason {
+    width: 560px;
+    display: block;
+    line-height: 50px;
+    margin: 0px auto;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.row {
+    margin: 0px;
+}
+
+#face, #opposite, .mask .dilog-center {
+    height: 800px;
+}
+
+.mask .dilog-center {
+    left: 50%;
+    top: 15%;
+    width: 682px;
+    margin-left: -350px;
+}
+
+.form-txt-setting {
+    color: #9b2cff;
+    margin-right: 80px;
+}
+
+.red-package-amount p:first-child {
+    color: #fec83d;
+    margin-left: 70px;
+    margin-top: 75px;
+}
+.red-package-amount p:first-child span{
+    color: #dc3a4b;
 }

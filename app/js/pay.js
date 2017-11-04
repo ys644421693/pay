@@ -31,11 +31,10 @@ function discussChoose(value){
         $("#discuss-type-" + value).parent().addClass("discuss-box-select");
     }
 }
-$(function(){
+slipInit = function(type){
     var ele = document.getElementById("slip");
     var mySlip = Slip(ele, "x").slider().width(350);
     var all = $("#slip").children("section").length;
-    $("#slip").css("width",""+(all*360));
     mySlip.end(function() {
         if(all<=3 && this.page > 2){
             mySlip.jump(0);
@@ -46,4 +45,15 @@ $(function(){
         }
         console.log(this.page);
     });
-});
+};
+
+flipClick=function(){
+    $("#opposite").addClass("out").removeClass("in");
+    setTimeout(function() {
+        $("#face").addClass("in").removeClass("out");
+    }, 225);
+};
+closeBox=function(){
+
+    $("#gift").hide()
+};
