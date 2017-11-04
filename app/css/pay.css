@@ -268,7 +268,7 @@ body {
 #acc-input-box input::-webkit-input-placeholder {
     color: #7BB5EC;
 }
-
+.ovfHiden{overflow: hidden;height: 100%;}
 #acc-input-box input:-moz-placeholder {
     color: #7BB5EC;
 }
@@ -368,7 +368,7 @@ body {
 }
 
 .hr-height-tip {
-    padding-left: 40px;
+    padding-left: 20px;
     font-weight: bold;
     line-height: 65px;
     font-size: 25px;
@@ -403,7 +403,7 @@ body {
 }
 
 .discuss-box-select-n, .discuss-box-select, .empty-btn-s {
-    border: solid #71b2ff 5px;
+    border: solid #71b2ff 3px;
     color: #000;
     height: 70px;
     border-radius: 35px;
@@ -413,7 +413,7 @@ body {
 
 .empty-btn-s {
     border-width: 2px;
-    font-size: 35px;
+    font-size: 30px;
     padding: 5px 40px 5px 40px;
     margin: 0px 10px 0px 10px;
 }
@@ -423,7 +423,7 @@ body {
 }
 
 .discuss-box li div label {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .big-font-35, .fail-reason {
@@ -439,7 +439,7 @@ body {
 #description {
     height: 200px;
     width: 100%;
-    font-size: 40px;
+    font-size: 35px;
     padding-top: 20px;
     line-height: 50px;
     resize: none;
@@ -585,7 +585,7 @@ body {
 }
 
 .sm-head-s {
-    margin-left: 35%;
+    margin-left: 20%;
 }
 
 .m-row {
@@ -597,7 +597,8 @@ body {
     font-size: 30px;
     line-height: 40px;
     color: #888a8b;
-    width: 90%;
+    width: 95%;
+    margin-top: 10px;
 }
 
 .discuss-box-border {

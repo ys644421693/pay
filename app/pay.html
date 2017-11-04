@@ -10,6 +10,7 @@
     <script type="text/javascript" src="lib/bootstrap.js"></script>
     <script type="text/javascript" src="js/pay.js"></script>
     <link type="text/css" href="css/pay.css" rel="stylesheet">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=910px, user-scalable=no">
 </head>
 <body class="container-fluid top-control">
 <section class="row text-center">
@@ -45,7 +46,7 @@
         <div class="rmb-font ">
             <span>当前货币汇率1</span>
             <span class="php-small-circle">PHP</span>
-            <span>= 7.5689 </span>
+            <span >= <sapn id="rate-php">7.5689</sapn> </span>
             <span> RMB</span>
         </div>
 
@@ -56,9 +57,10 @@
         <div class="top-control-80">
             <label class="big-font-50 count-amount">总计金额:</label>
         </div>
-        <section class="top-control-150" id="amountNumber">
-            <money class="big-font-120 money-icon">￥</money>
-            <span class="big-font-120 bottom-bord-black count-amount">217.51</span>
+        <!-- 当金额长度大于10时 切换用big-font-90 -->
+        <section class="top-control-150 big-font-120" id="amountNumber">
+            <money class="money-icon">￥</money>
+            <span class="bottom-bord-black count-amount">217.51</span>
         </section>
         <div class="top-control-150">
             <a href="javascript:void(0)" class="big-font-50 big-button-blue">

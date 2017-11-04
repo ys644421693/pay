@@ -3,17 +3,18 @@ var dc = [];
 function record(index){
     var i =0;
     for( ;i <= index;i++){
-        $("#record-"+i).removeClass("glyphicon-star-empty");
-        $("#record-"+i).addClass("glyphicon-star");
+        $("#record-start-"+i).removeClass("star-bg-empty").addClass("star-bg-full");
     }
     for(;i <= 5;i++){
-        $("#record-"+i).removeClass("glyphicon-star");
-        $("#record-"+i).addClass("glyphicon-star-empty");
+        $("#record-start-"+i).removeClass("star-bg-full").addClass("star-bg-empty");
     }
+    $("#recodeStar").val(index);
 }
 
 function amountChange(element){
-    console.log($(element).val());
+    console.log($("#rate-php").text());
+    console.log($(element).val().toString().length);
+
 }
 
 function discussChoose(value){
@@ -45,6 +46,10 @@ slipInit = function(type){
         }
         console.log(this.page);
     });
+    if(type == 0){
+        $('html,body').addClass('ovfHiden');
+    }
+
 };
 
 flipClick=function(){
@@ -54,6 +59,6 @@ flipClick=function(){
     }, 225);
 };
 closeBox=function(){
-
+    $('html,body').removeClass('ovfHiden');
     $("#gift").hide()
 };

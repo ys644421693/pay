@@ -10,10 +10,11 @@
     <script type="text/javascript" src="lib/bootstrap.js"></script>
     <script type="text/javascript" src="js/pay.js"></script>
     <link type="text/css" href="css/pay.css" rel="stylesheet">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=910px, user-scalable=no">
 </head>
 <body class="container-fluid top-control">
 <section class="row">
-    <div class="col-lg-12">
+    <form class="col-lg-12">
         <div class="row">
             <div class="content-left row-div">
                 <img class="circle-head-big" src="img/head.jpg"/>
@@ -31,19 +32,19 @@
         <div class="hr-line"></div>
         <div class="text-center" id="star-dg">
             <ul class="bottomControl-d">
-                <li class="star-bg-full star-d"></li>
-                <li class="star-bg-full star-d"></li>
-                <li class="star-bg-full star-d"></li>
-                <li class="star-bg-empty star-d"></li>
-                <li class="star-bg-empty star-d"></li>
+                <li id="record-start-1" class="star-bg-full star-d" onclick="record(1)"></li>
+                <li id="record-start-2" class="star-bg-full star-d" onclick="record(2)"></li>
+                <li id="record-start-3" class="star-bg-full star-d" onclick="record(3)"></li>
+                <li id="record-start-4" class="star-bg-empty star-d" onclick="record(4)"></li>
+                <li id="record-start-5" class="star-bg-empty star-d" onclick="record(5)"></li>
             </ul>
+            <input type="hidden" name="recode" id="recodeStar" value="0">
             <div class="hr-height top-control">
             </div>
             <div class="top-control">
                 <p class="big-font-30 font-weight-bold">请选出您心目中最贴切的关键词</p>
             </div>
             <span class="big-font-30 text-color-g" style="margin-top: 10px">(最多3个)</span>
-
             <br><br/>
             <div class="discuss-box">
                 <ul>
@@ -76,7 +77,7 @@
                         <div class="left_box text-left">
                             <span class="fileinput-button">
                                 <ico class="glyphicon glyphicon-camera blue-pic-icon"></ico>
-                                <input type="file">
+                                <input type="file"  accept="video/*;capture=camcorder" mutiple>
                              </span>
                             <span class="big-font-30 text-color-g">(最多上传3张照片)</span>
                         </div>
@@ -99,7 +100,7 @@
             <br/>
         </div>
 
-    </div>
+    </form>
 </section>
 </body>
 </html>
