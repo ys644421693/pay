@@ -13,7 +13,7 @@ function record(index){
 
 function amountChange(element){
     //汇率
-    var rate = parseInt($("#rate-php").text());
+    var rate = parseFloat($("#rate-php").text());
     var amountTotal = $(element).val() * rate;
     console.log($(element).val().toString().length);
     if(amountTotal < 0){
