@@ -12,9 +12,20 @@ function record(index){
 }
 
 function amountChange(element){
-    console.log($("#rate-php").text());
+    //汇率
+    var rate = parseInt($("#rate-php").text());
+    var amountTotal = $(element).val() * rate;
     console.log($(element).val().toString().length);
+    if(amountTotal < 0){
+        $(element).val(0);
+    }else{
+        if(amountTotal.toString().length > 10){
+            $("#amountFake").removeClass("big-font-120").addClass("big-font-90").html(amountTotal)
+        }else{
+            $("#amountFake").html(amountTotal);
+        }
 
+    }
 }
 
 function discussChoose(value){
@@ -61,4 +72,8 @@ flipClick=function(){
 closeBox=function(){
     $('html,body').removeClass('ovfHiden');
     $("#gift").hide()
+};
+
+submit = function(formId){
+    document.getElementById(formId).submit();
 };

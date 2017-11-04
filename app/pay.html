@@ -14,7 +14,7 @@
 </head>
 <body class="container-fluid top-control">
 <section class="row text-center">
-    <div class="col-lg-12">
+    <form class="col-lg-12" action="" method="post" name="payOrder" id="payOrder">
         <section>
             <img class="circle-head-big" src="img/head.jpg"/>
             <div class="row-height">
@@ -60,13 +60,15 @@
         <!-- 当金额长度大于10时 切换用big-font-90 -->
         <section class="top-control-150 big-font-120" id="amountNumber">
             <money class="money-icon">￥</money>
-            <span class="bottom-bord-black count-amount">217.51</span>
+            <span id="amountFake" class="bottom-bord-black count-amount">217.51</span>
+            <input id="amount" type="hidden" value="0">
         </section>
         <div class="top-control-150">
-            <a href="javascript:void(0)" class="big-font-50 big-button-blue">
+            <!--提交当前表单切记 要传入form id -->
+            <a href="javascript:void(0)" onclick="submit('payOrder')" class="big-font-50 big-button-blue">
                     立即支付</a>
         </div>
-    </div>
+    </form>
 </section>
 </body>
 </html>
