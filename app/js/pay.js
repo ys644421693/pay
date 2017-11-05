@@ -12,9 +12,20 @@ function record(index){
 }
 
 function amountChange(element){
+    var s = element.value.toString();
+    if(s.indexOf(".")==0 && s.length <=3){
+        element.value = parseFloat("0" + s);
+    }else if(s.indexOf(".") > 0 && s.length > 3){
+        if(s.substring(s.indexOf("."),s.length).length > 3){
+            element.value = parseFloat("0" + s.substring(0,s.length-1));
+        }
+    }else if (s.length>8){
+        element.value = parseFloat(s.substring(0,s.length-1));
+    }
     //汇率
     var rate = parseFloat($("#rate-php").text());
-    var amountTotal = $(element).val() * rate;
+    //精确到小数点后四位
+    var amountTotal = ($(element).val() * rate).toFixed(4);
     console.log($(element).val().toString().length);
     if(amountTotal < 0){
         $(element).val(0);
