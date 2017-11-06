@@ -38,8 +38,9 @@
         <br/>
         <div class="top-control-50">
             <div class="input-group" id="acc-input-box">
-                <input type="number" class="form-control" placeholder="请输入您的金额" aria-describedby="basic-addon2" onkeyup="amountChange(this)">
+                <input type="text" class="form-control" id="inputAmount" maxlength="10" placeholder="请输入您的金额" aria-describedby="basic-addon2"  onkeyup="amountChange(this)">
                 <span class="php-big-circle">PHP</span>
+                <div id="div-input-customer" onclick="showInputComponent(this);"></div>
             </div>
         </div>
 
@@ -69,6 +70,29 @@
                     立即支付</a>
         </div>
     </form>
+    <div class="row key-border-customer-hide" id="keyBorderM">
+        <div class="col-sm-12">
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">1</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">2</div>
+            <div class="col-sm-4 key-border-c-bottom" onclick="clickNumber(this)">3</div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">4</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">5</div>
+            <div class="col-sm-4 key-border-c-bottom" onclick="clickNumber(this)">6</div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">7</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">8</div>
+            <div class="col-sm-4 key-border-c-bottom" onclick="clickNumber(this)">9</div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-4 key-border-c-right" style="background-color: #545457" onclick="clickNumber(this)">.</div>
+            <div class="col-sm-4 key-border-c-right" onclick="clickNumber(this)">0</div>
+            <div class="col-sm-4" style="background-color: #545457" onclick="clickNumber(this)">C</div>
+        </div>
+    </div>
+
 </section>
 </body>
 </html>

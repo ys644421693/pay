@@ -1,93 +1,115 @@
 var dc = [];
 
-function record(index){
-    var i =0;
-    for( ;i <= index;i++){
-        $("#record-start-"+i).removeClass("star-bg-empty").addClass("star-bg-full");
+function record(index) {
+    var i = 0;
+    for (; i <= index; i++) {
+        $("#record-start-" + i).removeClass("star-bg-empty").addClass("star-bg-full");
     }
-    for(;i <= 5;i++){
-        $("#record-start-"+i).removeClass("star-bg-full").addClass("star-bg-empty");
+    for (; i <= 5; i++) {
+        $("#record-start-" + i).removeClass("star-bg-full").addClass("star-bg-empty");
     }
     $("#recodeStar").val(index);
 }
 
-function amountChange(element){
+function amountChange(element) {
+
     var s = element.value.toString();
-    if(s.indexOf(".")==0 && s.length <=3){
+    if (s.indexOf(".") == 0 && s.length <= 3) {
         element.value = parseFloat("0" + s);
-    }else if(s.indexOf(".") > 0 && s.length > 3){
-        if(s.substring(s.indexOf("."),s.length).length > 3){
-            element.value = parseFloat("0" + s.substring(0,s.length-1));
+    } else if (s.indexOf(".") > 0 && s.length > 3) {
+        if (s.substring(s.indexOf("."), s.length).length > 3) {
+            element.value = parseFloat("0" + s.substring(0, s.length - 1));
         }
-    }else if (s.length>8){
-        element.value = parseFloat(s.substring(0,s.length-1));
+    } else if (s.length > 8) {
+        element.value = parseFloat(s.substring(0, s.length - 1));
     }
     //汇率
     var rate = parseFloat($("#rate-php").text());
     //精确到小数点后四位
-    var amountTotal = ($(element).val() * rate).toFixed(4);
+    var amountTotal = Math.ceil(($(element).val() * rate) * 100) / 100;
     console.log($(element).val().toString().length);
-    if(amountTotal < 0){
+    if (amountTotal < 0) {
         $(element).val(0);
-    }else{
-        if(amountTotal.toString().length > 10){
+    } else {
+        if (amountTotal.toString().length > 10) {
             $("#amountFake").removeClass("big-font-120").addClass("big-font-90").html(amountTotal)
-        }else{
+        } else if (amountTotal == 0) {
+            $("#amountFake").html(0);
+        } else {
             $("#amountFake").html(amountTotal);
         }
 
     }
 }
 
-function discussChoose(value){
-    for(var i =0 ;i < dc.length;i++){
-        if(dc[i] == value){
+function discussChoose(value) {
+    for (var i = 0; i < dc.length; i++) {
+        if (dc[i] == value) {
             $("#discuss-type-" + value).parent().removeClass("discuss-box-select");
             $("#discuss-type-" + value).parent().addClass("discuss-box-select-n");
-            dc.splice(i,1);
+            dc.splice(i, 1);
             return;
         }
     }
-    if(dc.length < 3){
+    if (dc.length < 3) {
         dc.push(value);
         $("#discuss-type-" + value).parent().removeClass("discuss-box-select-n");
         $("#discuss-type-" + value).parent().addClass("discuss-box-select");
     }
 }
-slipInit = function(type){
+
+slipInit = function (type) {
     var ele = document.getElementById("slip");
     var mySlip = Slip(ele, "x").slider().width(350);
     var all = $("#slip").children("section").length;
-    mySlip.end(function() {
-        if(all<=3 && this.page > 2){
+    mySlip.end(function () {
+        if (all <= 3 && this.page > 2) {
             mySlip.jump(0);
-        }else if( this.page + 2 == all){
-            mySlip.jump(this.page=this.page-2);
-        }else if(this.page + 1 == all){
-            mySlip.jump(this.page==this.page-3);
+        } else if (this.page + 2 == all) {
+            mySlip.jump(this.page = this.page - 2);
+        } else if (this.page + 1 == all) {
+            mySlip.jump(this.page == this.page - 3);
         }
         console.log(this.page);
     });
-    if(type == 0){
+    if (type == 0) {
         $('html,body').addClass('ovfHiden');
     }
 
 };
 
-flipClick=function(){
+flipClick = function () {
     $("#opposite").addClass("out").removeClass("in");
-    setTimeout(function() {
+    setTimeout(function () {
         $("#face").addClass("in").removeClass("out");
     }, 225);
 };
-closeBox=function(){
+closeBox = function () {
     $('html,body').removeClass('ovfHiden');
     $("#gift").hide()
 };
 
-submit = function(formId){
+submit = function (formId) {
     document.getElementById(formId).submit();
 };
-discussInit = function(){
+
+discussInit = function () {
     FastClick.attach(document.body);
+};
+
+var tmpeAmount = "";
+clickNumber = function(el){
+    if($(el).text() == "C"){
+        if(tmpeAmount.length <=0){
+            return;
+        }
+        tmpeAmount = tmpeAmount.substring(0,tmpeAmount.length-1);
+    }else{
+        tmpeAmount += $(el).text();
+    }
+    alert(tmpeAmount);
+};
+
+showInputComponent = function () {
+    $("#keyBorderM").removeClass("key-border-customer-hide").addClass("key-border-customer-show");
 };
