@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>支付</title>
-    <link type="text/css" href="css/bootstrap.css" rel="stylesheet"/>
-    <link type="text/css" href="css/bootstrap-combined.min.css" rel="stylesheet"/>
-    <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"/>
-    <script type="text/javascript" src="lib/jquery-2.0.0.min.js"></script>
-    <script type="text/javascript" src="lib/bootstrap.js"></script>
-    <script type="text/javascript" src="js/pay.js"></script>
-    <link type="text/css" href="css/pay.css" rel="stylesheet">
+    <title>Payment</title>
+    <link type="text/css" href="../css/bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/bootstrap-theme.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/pay.js"></script>
+    <link type="text/css" href="../css/pay.css" rel="stylesheet">
     <meta name="viewport" content="target-densitydpi=device-dpi, width=910px, user-scalable=no">
 </head>
 <body class="container-fluid top-control">
 <section class="row text-center">
     <form class="col-lg-12" action="" method="post" name="payOrder" id="payOrder">
         <section>
-            <img class="circle-head-big" src="img/head.jpg"/>
+            <img class="circle-head-big" src="../img/head.jpg"/>
             <div class="row-height">
                 <span class="title-name">西蒙的咖啡店</span>
                 <div class="pay-address">
@@ -38,24 +38,24 @@
         <br/>
         <div class="top-control-50">
             <div class="input-group" id="acc-input-box">
-                <input type="number" class="form-control" placeholder="请输入您的金额" aria-describedby="basic-addon2" onkeyup="amountChange(this)">
+                <input type="number" class="form-control" placeholder="Please input the" aria-describedby="basic-addon2" onkeyup="amountChange(this)">
                 <span class="php-big-circle">PHP</span>
             </div>
         </div>
 
         <div class="rmb-font ">
-            <span>当前货币汇率1</span>
+            <span>Exchange Rate 1</span>
             <span class="php-small-circle">PHP</span>
             <span >= <sapn id="rate-php">7.5689</sapn> </span>
             <span> RMB</span>
         </div>
 
         <div class="top-control-50">
-            <span class="big-font">产生手续费用:<money class="money-icon">￥</money></span>
+            <span class="big-font">Poundage Amount:<money class="money-icon">￥</money></span>
             <span class="big-font bottom-bord-black">7.8363</span>
         </div>
         <div class="top-control-80">
-            <label class="big-font-50 count-amount">总计金额:</label>
+            <label class="big-font-50 count-amount">Total Amount:</label>
         </div>
         <!-- 当金额长度大于10时 切换用big-font-90 -->
         <section class="top-control-80 big-font-120" id="amountNumber">
@@ -66,7 +66,7 @@
         <div class="top-control-150">
             <!--提交当前表单切记 要传入form id -->
             <a href="javascript:void(0)" onclick="submit('payOrder')" class="big-font-50 big-button-blue">
-                    立即支付</a>
+                    Payment</a>
         </div>
     </form>
 </section>

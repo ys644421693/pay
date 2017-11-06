@@ -88,3 +88,6 @@ closeBox=function(){
 submit = function(formId){
     document.getElementById(formId).submit();
 };
+discussInit = function(){
+    FastClick.attach(document.body);
+};

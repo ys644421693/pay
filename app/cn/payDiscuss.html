@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>支付评价</title>
-    <link type="text/css" href="css/bootstrap.css" rel="stylesheet"/>
-    <link type="text/css" href="css/bootstrap-combined.min.css" rel="stylesheet"/>
-    <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"/>
-    <script type="text/javascript" src="lib/jquery-2.0.0.min.js"></script>
-    <script type="text/javascript" src="lib/bootstrap.js"></script>
-    <script type="text/javascript" src="js/pay.js"></script>
-    <link type="text/css" href="css/pay.css" rel="stylesheet">
+    <link type="text/css" href="../css/bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/bootstrap-theme.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/fastclick.js"></script>
+    <script type="text/javascript" src="../js/pay.js"></script>
+    <link type="text/css" href="../css/pay.css" rel="stylesheet">
     <meta name="viewport" content="target-densitydpi=device-dpi, width=910px, user-scalable=no">
 </head>
-<body class="container-fluid top-control">
+<body class="container-fluid top-control" onload="discussInit()">
 <section class="row">
     <form class="col-lg-12" action="" method="post" id="discussForm" name="discussForm">
         <div class="row">
             <div class="content-left row-div">
-                <img class="circle-head-big" src="img/head.jpg"/>
+                <img class="circle-head-big" src="../img/head.jpg"/>
             </div>
 
             <div class="row-div" style="padding-left: 30px">
@@ -32,11 +33,12 @@
         <div class="hr-line"></div>
         <div class="text-center" id="star-dg">
             <ul class="bottomControl-d">
+                <!--默认给出五星-->
                 <li id="record-start-1" class="star-bg-full star-d" onclick="record(1)"></li>
                 <li id="record-start-2" class="star-bg-full star-d" onclick="record(2)"></li>
                 <li id="record-start-3" class="star-bg-full star-d" onclick="record(3)"></li>
-                <li id="record-start-4" class="star-bg-empty star-d" onclick="record(4)"></li>
-                <li id="record-start-5" class="star-bg-empty star-d" onclick="record(5)"></li>
+                <li id="record-start-4" class="star-bg-full star-d" onclick="record(4)"></li>
+                <li id="record-start-5" class="star-bg-full star-d" onclick="record(5)"></li>
             </ul>
             <input type="hidden" name="recode" id="recodeStar" value="0">
             <div class="hr-height top-control">

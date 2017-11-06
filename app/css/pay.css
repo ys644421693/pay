@@ -215,6 +215,9 @@ body {
 .big-font-90 {
     font-size: 90px;
 }
+.big-font-40{
+    font-size: 40px;
+}
 
 .text-color-g, .text-color-g-b, .fail-reason {
     color: #888a8b;
@@ -238,7 +241,9 @@ body {
     color: #72B1F7;
     font-weight: bold;
 }
-
+.text-color-blue{
+    color: #72B1F7;
+}
 .big-button-blue, .big-button-yellow {
     color: #ffffff;
     font-weight: bold;
@@ -409,7 +414,7 @@ body {
     visibility: hidden;
 }
 
-.discuss-box-select-n, .discuss-box-select, .empty-btn-s {
+.discuss-box-select-n, .discuss-box-select, .empty-btn-s ,.full-btn-s{
     border: solid #71b2ff 3px;
     color: #000;
     height: 70px;
@@ -424,7 +429,20 @@ body {
     padding: 5px 40px 5px 40px;
     margin: 0px 10px 0px 10px;
 }
-
+.full-btn-s{
+    font-size: 35px;
+    padding: 10px 70px 10px 70px;
+    margin: 0px 10px 0px 10px;
+    background-color: #71b2ff;
+    color: #ffffff;
+    box-shadow: 0 0 30px rgba(109, 177, 254, 1);
+    -webkit-box-shadow: 0 0 30px rgba(109, 177, 254, 1);
+    -moz-box-shadow: 0 0 30px rgba(109, 177, 254, 1);
+}
+.full-btn-s:hover{
+    background: #71b2ff;
+    text-decoration: none;
+}
 .discuss-box li {
     padding: 10px 15px 10px 15px;
 }
@@ -556,7 +574,7 @@ body {
     font-size: 20px;
     width: 412px;
     height: 222px;
-    margin-top: 206px;
+    margin-top: 230px;
     margin-left: 130px;
     vertical-align: middle;
     background: url("../img/amount-panel.png") no-repeat;
@@ -663,7 +681,7 @@ body {
 .red-package-amount p:first-child {
     color: #fec83d;
     margin-left: 70px;
-    margin-top: 75px;
+    margin-top: 90px;
 }
 .red-package-amount p:first-child span{
     color: #dc3a4b;

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Discuss</title>
+    <link type="text/css" href="../css/bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/bootstrap-theme.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/fastclick.js"></script>
+    <script type="text/javascript" src="../js/pay.js"></script>
+    <link type="text/css" href="../css/pay.css" rel="stylesheet">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=910px, user-scalable=no">
+</head>
+<body class="container-fluid top-control" onload="discussInit()">
+<section class="row">
+    <form class="col-lg-12" action="" method="post" id="discussForm" name="discussForm">
+        <div class="row">
+            <div class="content-left row-div">
+                <img class="circle-head-big" src="../img/head.jpg"/>
+            </div>
+
+            <div class="row-div" style="padding-left: 30px">
+                <span class="title-name big-font-50">西蒙的咖啡店</span>
+                <div class="pay-address">
+                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                    <span class="big-font-35">菲律宾五号花园街道</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="hr-line"></div>
+        <div class="text-center" id="star-dg">
+            <ul class="bottomControl-d">
+                <!--默认给出五星-->
+                <li id="record-start-1" class="star-bg-full star-d" onclick="record(1)"></li>
+                <li id="record-start-2" class="star-bg-full star-d" onclick="record(2)"></li>
+                <li id="record-start-3" class="star-bg-full star-d" onclick="record(3)"></li>
+                <li id="record-start-4" class="star-bg-full star-d" onclick="record(4)"></li>
+                <li id="record-start-5" class="star-bg-full star-d" onclick="record(5)"></li>
+            </ul>
+            <input type="hidden" name="recode" id="recodeStar" value="0">
+            <div class="hr-height top-control">
+            </div>
+            <div class="top-control">
+                <p class="big-font-30 font-weight-bold">Who is the place best suited for?</p>
+            </div>
+            <span class="big-font-30 text-color-g" style="margin-top: 10px">(up to 3)</span>
+            <br><br/>
+            <div class="discuss-box">
+                <ul>
+                    <li><div class="discuss-box-select-n"><input value="1" type="checkbox" id="discuss-type-1" onchange="discussChoose(this.value)"><label for="discuss-type-1">Interesting</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="2" type="checkbox" id="discuss-type-2" onchange="discussChoose(this.value)"><label for="discuss-type-2">Wonderful</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="3" type="checkbox" id="discuss-type-3" onchange="discussChoose(this.value)"><label for="discuss-type-3">Miracle</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="4" type="checkbox" id="discuss-type-4" onchange="discussChoose(this.value)"><label for="discuss-type-4">It's delicious!love it</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="5" type="checkbox" id="discuss-type-5" onchange="discussChoose(this.value)"><label for="discuss-type-5">good</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="6" type="checkbox" id="discuss-type-6" onchange="discussChoose(this.value)"><label for="discuss-type-6">Cheap</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="7" type="checkbox" id="discuss-type-7" onchange="discussChoose(this.value)"><label for="discuss-type-7">Expensive</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="8" type="checkbox" id="discuss-type-8" onchange="discussChoose(this.value)"><label for="discuss-type-8">Dislike it!</label></div></li>
+                    <li><div class="discuss-box-select-n"><input value="9" type="checkbox" id="discuss-type-9" onchange="discussChoose(this.value)"><label for="discuss-type-9">Useless</label></div></li>
+                </ul>
+            </div>
+
+            <div class="hr-height top-control">
+            </div>
+            <div class="top-control">
+                <p class="big-font-30 font-weight-bold">Describe your experience at this place</p>
+            </div>
+
+            <span class="big-font-30 text-color-g">(No more than 40 words)</span>
+            <br>
+            <br>
+            <section class="box">
+                <div class="left_box"></div>
+                <div class="center_box">
+                    <textarea class="text-left" id="description" maxlength="40" placeholder="Describe your experience at this place"></textarea>
+                    <div class="big-font-50 box">
+                        <div class="left_box text-left">
+                            <span class="fileinput-button">
+                                <ico class="glyphicon glyphicon-camera blue-pic-icon"></ico>
+                                <input type="file"  accept="image/*" mutiple>
+                             </span>
+                            <span class="big-font-30 text-color-g">(up to 3 photos)</span>
+                        </div>
+                       <div class="center_box">
+                       </div>
+                        <div class="right_box text-right">
+                            <!--<img class="pic-small" src="img/timg.jpg">
+                            <img class="pic-small" src="img/timg1.jpg">
+                            <img class="pic-small" src="img/timg2.jpg">-->
+                        </div>
+                    </div>
+                </div>
+                <div class="right_box"></div>
+            </section>
+            <div class="top-control-80 ">
+                <a href="javascript:void(0)" onclick="submit('discussForm')" class="big-font-50 big-button-blue">
+                    Post it</a>
+            </div>
+            <br/>
+            <br/>
+        </div>
+
+    </form>
+</section>
+</body>
+</html>
