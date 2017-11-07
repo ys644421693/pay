@@ -720,19 +720,21 @@ body {
     display: inherit;
 }
 
-.key-border-customer-show .col-sm-4 {
+.key-border-customer-show .col-sm-4,#keyBorderM .col-sm-2 {
     background-color: #87878a;
-    height: 80px;
+    height: 130px;
     color: #ffffff;
     font-size: 40px;
-    line-height: 80px;
+    line-height: 130px;
     /*font-weight: bold;*/
     filter: alpha(opacity=90);
     -moz-opacity: 0.9;
     -khtml-opacity: 0.9;
     opacity: 0.9;
 }
-
+.key-border-customer-show .col-sm-4:hover{
+    background-color:#545457;
+}
 .key-border-c-right {
     border-right: solid #545457 3px;
 }
