@@ -122,6 +122,13 @@ clickNumber = function(el){
 
 showInputComponent = function () {
     $("#keyBorderM").removeClass("key-border-customer-hide").addClass("key-border-customer-show");
+    $('html, body').animate({
+        scrollTop: $("#keyBorderM").offset().top
+    }, 1000);
+
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    }, false);
 };
 hideInputComponent = function(){
     var tempAmount = $("#inputAmount").val();
@@ -129,4 +136,8 @@ hideInputComponent = function(){
         $("#inputAmount").val(tempAmount.substring(0, tempAmount.length - 1));
     }
     $("#keyBorderM").removeClass("key-border-customer-show").addClass("key-border-customer-hide");
+    //如果弹出对话框时，底层的视图就不让滚动了
+    document.addEventListener('touchmove', function(e) {
+    }, false);
+
 };

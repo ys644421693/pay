@@ -320,6 +320,8 @@ body {
     height: 70px;
     width: 100%;
     text-align: center;
+    margin: 0px;
+    padding-left: 30px;
 }
 
 .star-bg-full, .star-sm-full {
@@ -336,7 +338,8 @@ body {
 .bottomControl-small {
     height: 60px;
     width: 100%;
-    margin: -25px 0px 0px 15px;
+    margin: -25px 0px 0px 0px;
+    padding-left: 15px;
 }
 
 .star-sm-full, .star-sm-empty {
@@ -378,8 +381,9 @@ body {
 .bottomControl-d {
     height: 140px;
     width: 100%;
-    margin-left: 10px;
+    margin: 0px;
     text-align: center;
+    padding-left: 30px;
 }
 
 .hr-height, .hr-height-tip {
@@ -708,9 +712,6 @@ body {
 }
 
 .key-border-customer-hide, .key-border-customer-show {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     display: none;
     width: 100%;
 }
