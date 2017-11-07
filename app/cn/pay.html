@@ -39,7 +39,7 @@
         <br/>
         <div class="top-control-50">
             <div class="input-group" id="acc-input-box">
-                <input type="text" class="form-control" id="inputAmount" maxlength="10" placeholder="请输入您的金额" aria-describedby="basic-addon2"  onkeyup="amountChange(this)">
+                <input type="text" class="form-control" id="inputAmount" readonly maxlength="10" placeholder="请输入您的金额" aria-describedby="basic-addon2"  onkeyup="amountChange(this)">
                 <span class="php-big-circle">PHP</span>
                 <div id="div-input-customer" onclick="showInputComponent(this);"></div>
             </div>
@@ -48,13 +48,13 @@
         <div class="rmb-font ">
             <span>当前货币汇率1</span>
             <span class="php-small-circle">PHP</span>
-            <span >= <sapn id="rate-php">7.5689</sapn> </span>
-            <span> RMB</span>
+            <span >= <sapn id="rate-php">6.6365</sapn> </span>
+            <span> CNY</span>
         </div>
 
         <div class="top-control-50">
-            <span class="big-font">产生手续费用:<money class="money-icon">￥</money></span>
-            <span class="big-font bottom-bord-black">7.8363</span>
+            <span class="big-font">手续费费率:<money class="money-icon">￥</money></span>
+            <span class="big-font bottom-bord-black" id="fee">1%</span>
         </div>
         <div class="top-control-80">
             <label class="big-font-50 count-amount">总计金额:</label>

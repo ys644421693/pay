@@ -732,7 +732,7 @@ body {
     -khtml-opacity: 0.9;
     opacity: 0.9;
 }
-.key-border-customer-show .col-sm-4:hover{
+.key-border-customer-show .col-sm-4:hover,#keyBorderM .col-sm-2:hover{
     background-color:#545457;
 }
 .key-border-c-right {

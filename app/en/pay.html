@@ -39,7 +39,7 @@
         <br/>
         <div class="top-control-50">
             <div class="input-group" id="acc-input-box">
-                <input type="text" class="form-control" id="inputAmount" placeholder="Please input the" aria-describedby="basic-addon2" onkeyup="amountChange(this)">
+                <input type="text" class="form-control" id="inputAmount" readonly placeholder="Please input the" aria-describedby="basic-addon2" onkeyup="amountChange(this)">
                 <span class="php-big-circle">PHP</span>
                 <div id="div-input-customer" onclick="showInputComponent(this);"></div>
             </div>
@@ -48,13 +48,13 @@
         <div class="rmb-font ">
             <span>Exchange Rate 1</span>
             <span class="php-small-circle">PHP</span>
-            <span >= <sapn id="rate-php">7.5689</sapn> </span>
-            <span> RMB</span>
+            <span >= <sapn id="rate-php">6.6365</sapn> </span>
+            <span> CNY</span>
         </div>
 
         <div class="top-control-50">
             <span class="big-font">Poundage Amount:<money class="money-icon">￥</money></span>
-            <span class="big-font bottom-bord-black">7.8363</span>
+            <span class="big-font bottom-bord-black" id="fee">1%</span>
         </div>
         <div class="top-control-80">
             <label class="big-font-50 count-amount">Total Amount:</label>

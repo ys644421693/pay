@@ -14,8 +14,9 @@ function record(index) {
 function amountChange() {
     //汇率
     var rate = parseFloat($("#rate-php").text());
-    //精确到小数点后四位
-    var amountTotal = Math.ceil((parseFloat($("#inputAmount").val()) * rate) * 100) / 100;
+    var fee = parseFloat($("#fee").text().substring(0,$("#fee").text().length-1))/100+1;
+    //精确到小数点后2位
+    var amountTotal = Math.ceil((parseFloat($("#inputAmount").val()) * rate) * fee * 100) / 100;
     if (amountTotal < 0) {
         $("#inputAmount").val(0);
     } else {
@@ -26,7 +27,6 @@ function amountChange() {
         } else {
             $("#amountFake").html(amountTotal);
         }
-
     }
 }
 
@@ -117,6 +117,7 @@ clickNumber = function(el){
         $("#inputAmount").val(tempAmount);
     }
     amountChange();
+    $("#inputAmount").focus();
 };
 
 showInputComponent = function () {
