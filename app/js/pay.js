@@ -94,6 +94,11 @@ clickNumber = function (el) {
         if (tempAmount.length <= 0) {
             return;
         }
+        if( tempAmount.length - 1 == 0){
+            $("#inputAmount").val(null);
+            $("#amountFake").html(0);
+            return;
+        }
         tempAmount = tempAmount.substring(0, tempAmount.length - 1);
     } else {
         tempAmount += $(el).text();
