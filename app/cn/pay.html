@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=1000px,maximum-scale=1.0, user-scalable=0;">
     <title>支付</title>
     <link type="text/css" href="../css/bootstrap.css" rel="stylesheet"/>
     <link type="text/css" href="../css/bootstrap-combined.min.css" rel="stylesheet"/>
@@ -11,11 +12,10 @@
     <script type="text/javascript" src="../lib/min.slip.js"></script>
     <script type="text/javascript" src="../js/pay.js"></script>
     <link type="text/css" href="../css/pay.css" rel="stylesheet">
-    <meta name="viewport" content="target-densitydpi=device-dpi, width=1000px, user-scalable=no">
 </head>
-<body class="container-fluid top-control">
+<body class="container-fluid top-control" ontouchstart="">
 <section class="row text-center">
-    <form class="col-lg-12" action="" method="post" name="payOrder" id="payOrder">
+    <form class="col-lg-12" action="" method="post" name="payOrder" id="payOrder" onclick="dealThis(event)">
         <section>
             <img class="circle-head-big" src="../img/head.jpg"/>
             <div class="row-height">
@@ -43,7 +43,7 @@
             <div class="input-group" id="acc-input-box">
                 <input type="text" class="form-control" id="inputAmount" readonly="readonly" disabled="disabled" placeholder="请输入您的金额" aria-describedby="basic-addon2">
                 <span class="php-big-circle">PHP</span>
-                <div id="div-input-customer" onclick="showInputComponent(this);"></div>
+                <div id="div-input-customer" onclick="showInputComponent();"></div>
             </div>
         </div>
 
@@ -67,33 +67,33 @@
             <span id="amountFake" class="bottom-bord-black count-amount">0</span>
             <input id="amount" type="hidden" value="0">
         </section>
+
         <div class="top-control-150">
             <!--提交当前表单切记 要传入form id -->
-            <a href="javascript:void(0)" onclick="submit('payOrder')" class="big-font-50 big-button-blue">
+            <a href="javascript:void(0)" onclick="submit('payOrder')" id="submitData" class="big-font-50 big-button-blue">
                     立即支付</a>
         </div>
     </form>
     <div class="row key-border-customer-hide" id="keyBorderM">
         <div class="col-sm-12">
-            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">1</div>
-            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">2</div>
-            <div class="col-sm-4 key-border-c-bottom" onclick="clickNumber(this)">3</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">1</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click" >2</div>
+            <div class="col-sm-4 key-border-c-bottom event-click">3</div>
         </div>
         <div class="col-sm-12">
-            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">4</div>
-            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">5</div>
-            <div class="col-sm-4 key-border-c-bottom" onclick="clickNumber(this)">6</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">4</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">5</div>
+            <div class="col-sm-4 key-border-c-bottom event-click" >6</div>
         </div>
         <div class="col-sm-12">
-            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">7</div>
-            <div class="col-sm-4 key-border-c-right key-border-c-bottom" onclick="clickNumber(this)">8</div>
-            <div class="col-sm-4 key-border-c-bottom" onclick="clickNumber(this)">9</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">7</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click" >8</div>
+            <div class="col-sm-4 key-border-c-bottom event-click" >9</div>
         </div>
-        <div class="col-sm-12">
-            <div class="col-sm-4 key-border-c-right" style="background-color: #545457" onclick="clickNumber(this)">.</div>
-            <div class="col-sm-4 key-border-c-right" onclick="clickNumber(this)">0</div>
-            <div class="col-sm-2" onclick="clickNumber(this)">D</div>
-            <div class="col-sm-2" style="background-color: #545457" onclick="hideInputComponent(this)">OK</div>
+        <div class="col-sm-12 nan-number">
+            <div class="col-sm-4 key-border-c-right event-click" >.</div>
+            <div class="col-sm-4 key-border-c-right event-click" >0</div>
+            <div class="col-sm-4 event-delete"><img class="event-delete" src="../img/delete.png"></div>
         </div>
     </div>
 

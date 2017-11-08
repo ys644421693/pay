@@ -14,7 +14,7 @@ function record(index) {
 function amountChange() {
     //汇率
     var rate = parseFloat($("#rate-php").text());
-    var fee = parseFloat($("#fee").text().substring(0,$("#fee").text().length-1))/100+1;
+    var fee = parseFloat($("#fee").text().substring(0, $("#fee").text().length - 1)) / 100 + 1;
     //精确到小数点后2位
     var amountTotal = Math.ceil((parseFloat($("#inputAmount").val()) * rate) * fee * 100) / 100;
     if (amountTotal < 0) {
@@ -85,35 +85,35 @@ discussInit = function () {
     FastClick.attach(document.body);
 };
 
-clickNumber = function(el){
+clickNumber = function (el) {
     var tempAmount = $("#inputAmount").val();
-    if($(el).text() == "." && tempAmount.indexOf(".") > 0){
+    if ($(el).text() == "." && tempAmount.indexOf(".") > 0) {
         return;
     }
-    if($(el).text() == "D"){
-        if(tempAmount.length <=0){
+    if (el == "D") {
+        if (tempAmount.length <= 0) {
             return;
         }
-        tempAmount = tempAmount.substring(0,tempAmount.length-1);
-    }else{
+        tempAmount = tempAmount.substring(0, tempAmount.length - 1);
+    } else {
         tempAmount += $(el).text();
     }
     if (tempAmount.indexOf(".") == 0) {
         tempAmount = "0" + tempAmount;
     }
 
-    if (tempAmount.indexOf(".") > 0 && tempAmount.indexOf(".")+1 < tempAmount.length) {
+    if (tempAmount.indexOf(".") > 0 && tempAmount.indexOf(".") + 1 < tempAmount.length) {
 
         if (tempAmount.substring(tempAmount.indexOf("."), tempAmount.length).length > 3) {
             tempAmount = tempAmount.substring(0, tempAmount.length - 1);
             $("#inputAmount").val(tempAmount);
-        }else{
+        } else {
             $("#inputAmount").val(tempAmount);
         }
-    } else if (tempAmount.length > 8) {
+    } else if (tempAmount.length > 10) {
         tempAmount = tempAmount.substring(0, tempAmount.length - 1);
         $("#inputAmount").val(tempAmount);
-    }else{
+    } else {
         $("#inputAmount").val(tempAmount);
     }
     amountChange();
@@ -126,18 +126,49 @@ showInputComponent = function () {
         scrollTop: $("#keyBorderM").offset().top
     }, 1000);
 
-    document.addEventListener('touchmove', function(e) {
-        e.preventDefault();
+    document.addEventListener('touchmove', function (e) {
+        hideInputComponent();
+
     }, false);
 };
-hideInputComponent = function(){
+hideInputComponent = function () {
     var tempAmount = $("#inputAmount").val();
-    if(tempAmount.indexOf(".")==tempAmount.length-1){
+    if (tempAmount.indexOf(".") == tempAmount.length - 1) {
         $("#inputAmount").val(tempAmount.substring(0, tempAmount.length - 1));
     }
     $("#keyBorderM").removeClass("key-border-customer-show").addClass("key-border-customer-hide");
     //如果弹出对话框时，底层的视图就不让滚动了
-    document.addEventListener('touchmove', function(e) {
+    document.addEventListener('touchmove', function (e) {
+
     }, false);
+};
+
+dealThis = function (event) {
+    console.log(event);
+    if (event.target.id == "div-input-customer" || event.target.id=="submitData") {
+        return false;
+    }
+    hideInputComponent();
+    return false;
 
 };
+
+document.documentElement.addEventListener('touchstart', function (event) {
+    if (event.touches.length > 1) {
+        event.preventDefault();
+    }
+}, false);
+
+var lastTouchEnd = 0;
+document.documentElement.addEventListener('touchend', function (event) {
+    if(event.target.className.indexOf("event-click") >= 0){
+        clickNumber(event.target);
+    }else if (event.target.className.indexOf("event-delete") >= 0){
+        clickNumber("D");
+    }
+    var now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);

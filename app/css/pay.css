@@ -733,8 +733,14 @@ body {
     -khtml-opacity: 0.9;
     opacity: 0.9;
 }
-.key-border-customer-show .col-sm-4:hover,#keyBorderM .col-sm-2:hover{
+.key-border-customer-show .col-sm-4:active,#keyBorderM .col-sm-2:active{
     background-color:#545457;
+}
+#keyBorderM .nan-number .col-sm-4:first-child,#keyBorderM .nan-number .col-sm-4:last-child{
+    background-color:#545457;
+}
+#keyBorderM .nan-number .col-sm-4:first-child:active,#keyBorderM .nan-number .col-sm-4:last-child:active{
+    background-color: #87878a;
 }
 .key-border-c-right {
     border-right: solid #545457 3px;
