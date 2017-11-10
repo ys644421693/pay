@@ -132,8 +132,9 @@ showInputComponent = function () {
     }, 1000);
 
     document.addEventListener('touchmove', function (e) {
-        hideInputComponent();
-
+        $('html, body').animate({
+            scrollTop: $("#keyBorderM").offset().top
+        }, 1000);
     }, false);
 };
 hideInputComponent = function () {

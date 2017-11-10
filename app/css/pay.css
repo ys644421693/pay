@@ -219,7 +219,9 @@ body {
 .big-font-40 {
     font-size: 40px;
 }
-
+.big-font-45{
+    font-size: 45px;
+}
 .text-color-g, .text-color-g-b, .fail-reason {
     color: #888a8b;
 }
@@ -725,7 +727,7 @@ body {
     background-color: #87878a;
     height: 130px;
     color: #ffffff;
-    font-size: 40px;
+    font-size: 50px;
     line-height: 130px;
     /*font-weight: bold;*/
     filter: alpha(opacity=90);
