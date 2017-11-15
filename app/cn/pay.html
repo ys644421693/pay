@@ -24,11 +24,11 @@
                 </div>
                 <div>
                     <ul class="bottomControl">
-                        <li  class="star-bg-full"></li>
-                        <li  class="star-bg-full"></li>
-                        <li  class="star-bg-full"></li>
-                        <li  class="star-bg-empty"></li>
-                        <li  class="star-bg-empty"></li>
+                        <li class="star-bg-full"></li>
+                        <li class="star-bg-full"></li>
+                        <li class="star-bg-full"></li>
+                        <li class="star-bg-empty"></li>
+                        <li class="star-bg-empty"></li>
                     </ul>
                 </div>
             </div>
@@ -38,7 +38,8 @@
         <br/>
         <div class="top-control-50">
             <div class="input-group" id="acc-input-box">
-                <input type="text" class="form-control" id="inputAmount" readonly="readonly" disabled="disabled" placeholder="请输入您的金额" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" id="inputAmount" readonly="readonly" disabled="disabled"
+                       placeholder="请输入您的金额" aria-describedby="basic-addon2">
                 <span class="php-big-circle">PHP</span>
                 <div id="div-input-customer" onclick="showInputComponent();"></div>
             </div>
@@ -47,7 +48,7 @@
         <div class="rmb-font ">
             <span>当前货币汇率1</span>
             <span class="php-small-circle">PHP</span>
-            <span >= <sapn id="rate-php">6.6365</sapn> </span>
+            <span>= <sapn id="rate-php">6.6365</sapn> </span>
             <span> CNY</span>
         </div>
 
@@ -65,31 +66,34 @@
             <input id="amount" type="hidden" value="0">
         </section>
 
-        <div class="top-control-150">
-            <!--提交当前表单切记 要传入form id -->
-            <a href="javascript:void(0)" onclick="submit('payOrder')" id="submitData" class="big-font-50 big-button-blue">
-                    立即支付</a>
-        </div>
+
     </form>
+    <div class="top-control-150">
+        <!--提交当前表单切记 要传入form id -->
+        <a href="javascript:void(0)" onclick="submit('payOrder')" id="submitData" class="big-font-50 big-button-blue">
+            立即支付</a>
+
+    </div>
+    <br/>
     <div class="row key-border-customer-hide" id="keyBorderM">
         <div class="col-sm-12">
             <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">1</div>
-            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click" >2</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">2</div>
             <div class="col-sm-4 key-border-c-bottom event-click">3</div>
         </div>
         <div class="col-sm-12">
             <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">4</div>
             <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">5</div>
-            <div class="col-sm-4 key-border-c-bottom event-click" >6</div>
+            <div class="col-sm-4 key-border-c-bottom event-click">6</div>
         </div>
         <div class="col-sm-12">
             <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">7</div>
-            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click" >8</div>
-            <div class="col-sm-4 key-border-c-bottom event-click" >9</div>
+            <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">8</div>
+            <div class="col-sm-4 key-border-c-bottom event-click">9</div>
         </div>
         <div class="col-sm-12 nan-number">
-            <div class="col-sm-4 key-border-c-right event-click" >.</div>
-            <div class="col-sm-4 key-border-c-right event-click" >0</div>
+            <div class="col-sm-4 key-border-c-right event-click">.</div>
+            <div class="col-sm-4 key-border-c-right event-click">0</div>
             <div class="col-sm-4 event-delete"><img class="event-delete" src="../img/delete.png"></div>
         </div>
     </div>

@@ -89,6 +89,13 @@ clickNumber = function (el) {
     var tempAmount = $("#inputAmount").val();
     if ($(el).text() == "." && tempAmount.indexOf(".") > 0) {
         return;
+    }else if($(el).text() == "0"){
+        if (tempAmount == "0"){
+            return;
+        }
+        if (tempAmount.indexOf(".0")>0){
+            return;
+        }
     }
     if (el == "D") {
         if (tempAmount.length <= 0) {
@@ -101,7 +108,11 @@ clickNumber = function (el) {
         }
         tempAmount = tempAmount.substring(0, tempAmount.length - 1);
     } else {
-        tempAmount += $(el).text();
+        if($(el).text() != "0" && tempAmount=="0"){
+            tempAmount = $(el).text();
+        }else{
+            tempAmount += $(el).text();
+        }
     }
     if (tempAmount.indexOf(".") == 0) {
         tempAmount = "0" + tempAmount;
@@ -132,9 +143,7 @@ showInputComponent = function () {
     }, 1000);
 
     document.addEventListener('touchmove', function (e) {
-        $('html, body').animate({
-            scrollTop: $("#keyBorderM").offset().top
-        }, 1000);
+        hideInputComponent();
     }, false);
 };
 hideInputComponent = function () {
@@ -150,12 +159,11 @@ hideInputComponent = function () {
 };
 
 dealThis = function (event) {
-    console.log(event);
-    if (event.target.id == "div-input-customer" || event.target.id=="submitData") {
-        return false;
+    if (event.target.id == "div-input-customer") {
+        return true;
     }
     hideInputComponent();
-    return false;
+    return true;
 
 };
 
