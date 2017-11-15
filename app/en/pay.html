@@ -53,8 +53,8 @@
         </div>
 
         <div class="top-control-50">
-            <span class="big-font">Poundage Amount:<money class="money-icon">￥</money></span>
-            <span class="big-font bottom-bord-black" id="fee">1%</span>
+            <span class="big-font">Poundage Rate:</span>
+            <span class="big-font-45" id="fee">1%</span>
         </div>
         <div class="top-control-80">
             <label class="big-font-50 count-amount">Total Amount:</label>
@@ -66,12 +66,12 @@
             <input id="amount" type="hidden" value="0">
         </section>
     </form>
-    <div class="top-control-150">
+    <div class="top-control-150" onclick="dealThis(event)" style="padding-bottom: 40px">
         <!--提交当前表单切记 要传入form id -->
         <a href="javascript:void(0)" onclick="submit('payOrder')" class="big-font-50 big-button-blue">
             Payment</a>
     </div>
-    <br/>
+
     <div class="row key-border-customer-hide" id="keyBorderM">
         <div class="col-sm-12">
             <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">1</div>
