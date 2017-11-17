@@ -190,6 +190,7 @@ document.documentElement.addEventListener('touchend', function (event) {
 deletePic =function (index) {
     $("#fileEvent"+index).val("");
     document.getElementById("img-"+index).src = "";
+    $("#pic-"+index).addClass("file-hide");
     for (var i = 1; i <= 3; i++) {
         if (index!=i){
             $("#box-file-"+i).addClass("file-hide");
@@ -216,6 +217,7 @@ function preImg(index) {
     var accept  = $("#fileEvent"+index).val();
     if (accept.indexOf("jpg") > 0 || accept.indexOf("gif") > 0 || accept.indexOf("png") > 0 ||
         accept.indexOf("JPG") > 0 || accept.indexOf("GIF") > 0 || accept.indexOf("PNG") > 0) {
+        $("#pic-"+index).removeClass("file-hide");
         document.getElementById("img-" + index).src = getFileUrl(index);
         $("#box-file-" + index).addClass("file-hide");
         for (var i = 1; i <= 3; i++) {
