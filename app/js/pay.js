@@ -186,3 +186,48 @@ document.documentElement.addEventListener('touchend', function (event) {
     }
     lastTouchEnd = now;
 }, false);
+
+deletePic =function (index) {
+    $("#fileEvent"+index).val("");
+    document.getElementById("img-"+index).src = "";
+    for (var i = 1; i <= 3; i++) {
+        if (index!=i){
+            $("#box-file-"+i).addClass("file-hide");
+        }
+    }
+    $("#box-file-"+index).removeClass("file-hide");
+};
+
+function getFileUrl(index) {
+    var url;
+    var file = document.getElementById("fileEvent"+index);
+    var agent = navigator.userAgent;
+    if (agent.indexOf("MSIE")>=1) {
+        url = file.value;
+    } else if(agent.indexOf("Firefox")>0) {
+        url = window.URL.createObjectURL(file.files.item(0));
+    } else if(agent.indexOf("Chrome")>0) {
+        url = window.URL.createObjectURL(file.files.item(0));
+    }
+    return url;
+}
+
+function preImg(index) {
+    var accept  = $("#fileEvent"+index).val();
+    if (accept.indexOf("jpg") > 0 || accept.indexOf("gif") > 0 || accept.indexOf("png") > 0 ||
+        accept.indexOf("JPG") > 0 || accept.indexOf("GIF") > 0 || accept.indexOf("PNG") > 0) {
+        document.getElementById("img-" + index).src = getFileUrl(index);
+        $("#box-file-" + index).addClass("file-hide");
+        for (var i = 1; i <= 3; i++) {
+            if (index != i && !$("#fileEvent" + i).val()) {
+                $("#box-file-" + i).removeClass("file-hide");
+                break;
+            }
+            if (i == 3) {
+                $("#box-file-" + i).removeClass("file-hide");
+            }
+        }
+    }else{
+        $("#fileEvent"+index).val("");
+    }
+}

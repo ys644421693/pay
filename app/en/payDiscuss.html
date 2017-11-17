@@ -76,18 +76,41 @@
                     <textarea class="text-left" id="description" maxlength="40" placeholder="Describe your experience at this place"></textarea>
                     <div class="big-font-50 box">
                         <div class="left_box text-left">
-                            <span class="fileinput-button">
+                            <span class="fileinput-button" id="box-file-1">
                                 <ico class="glyphicon glyphicon-camera blue-pic-icon"></ico>
-                                <input type="file"  accept="image/*" mutiple>
+                                <input type="file" id="fileEvent1" onchange="preImg(1)" accept="image/*;capture=camcorder" mutiple>
+                             </span>
+                            <span class="fileinput-button file-hide" id="box-file-2">
+                                <ico class="glyphicon glyphicon-camera blue-pic-icon"></ico>
+                                <input type="file" id="fileEvent2" onchange="preImg(2)" accept="image/*;capture=camcorder" mutiple>
+                             </span>
+                            <span class="fileinput-button file-hide" id="box-file-3">
+                                <ico class="glyphicon glyphicon-camera blue-pic-icon"></ico>
+                                <input type="file" id="fileEvent3" onchange="preImg(3)"  accept="image/*;capture=camcorder" mutiple>
                              </span>
                             <span class="big-font-30 text-color-g">(up to 3 photos)</span>
                         </div>
                        <div class="center_box">
                        </div>
-                        <div class="right_box text-right">
-                            <!--<img class="pic-small" src="img/timg.jpg">
-                            <img class="pic-small" src="img/timg1.jpg">
-                            <img class="pic-small" src="img/timg2.jpg">-->
+                        <div class="right_box text-right box">
+                            <div class="pic-small" >
+                                <div class="recommend-box-content">
+                                    <span class="close-pic-small" onclick="deletePic(1)">x</span>
+                                    <img class="pic-view" id="img-1">
+                                </div>
+                            </div>
+                            <div class="pic-small">
+                                <div class="recommend-box-content">
+                                    <span class="close-pic-small" onclick="deletePic(2)">x</span>
+                                    <img class="pic-view" id="img-2">
+                                </div>
+                            </div>
+                            <div class="pic-small">
+                                <div class="recommend-box-content">
+                                    <span class="close-pic-small" onclick="deletePic(3)">x</span>
+                                    <img class="pic-view" id="img-3">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
