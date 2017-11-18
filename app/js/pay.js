@@ -83,6 +83,11 @@ submit = function (formId) {
 
 discussInit = function () {
     FastClick.attach(document.body);
+    /*var ua = navigator.userAgent.toLowerCase();//获取浏览器的userAgent,并转化为小写——注：userAgent是用户可以修改的
+    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);//判断是否是苹果手机，是则是true
+    if (isIos) {
+        $("input:file").removeAttr("capture");
+    };*/
 };
 
 clickNumber = function (el) {
@@ -202,7 +207,15 @@ deletePic =function (index) {
 function getFileUrl(index) {
     var url;
     var file = document.getElementById("fileEvent"+index);
-    var agent = navigator.userAgent;
+    if (window.createObjectURL != undefined) {//basic
+        url = window.createObjectURL(file.files.item(0));
+    } else if (window.URL != undefined) {//mozilla(firefox)兼容火狐
+        url = window.URL.createObjectURL(file.files.item(0));
+    } else if (window.webkitURL != undefined) {//webkit or chrome
+        url = window.webkitURL.createObjectURL(file.files.item(0));
+    }
+    return url;
+   /* var agent = navigator.userAgent;
     if (agent.indexOf("MSIE")>=1) {
         url = file.value;
     } else if(agent.indexOf("Firefox")>0) {
@@ -210,13 +223,13 @@ function getFileUrl(index) {
     } else if(agent.indexOf("Chrome")>0) {
         url = window.URL.createObjectURL(file.files.item(0));
     }
-    return url;
+    return url;*/
 }
 
 function preImg(index) {
     var accept  = $("#fileEvent"+index).val();
-    if (accept.indexOf("jpg") > 0 || accept.indexOf("gif") > 0 || accept.indexOf("png") > 0 ||
-        accept.indexOf("JPG") > 0 || accept.indexOf("GIF") > 0 || accept.indexOf("PNG") > 0) {
+    if (accept.indexOf("jpg") > 0 || accept.indexOf("gif") > 0 || accept.indexOf("png") > 0 ||accept.indexOf("jpeg") > 0||
+        accept.indexOf("JPG") > 0 || accept.indexOf("GIF") > 0 || accept.indexOf("PNG") > 0 || accept.indexOf("JPEG") > 0) {
         $("#pic-"+index).removeClass("file-hide");
         document.getElementById("img-" + index).src = getFileUrl(index);
         $("#box-file-" + index).addClass("file-hide");
