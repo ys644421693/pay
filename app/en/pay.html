@@ -66,12 +66,22 @@
             <input id="amount" type="hidden" value="0">
         </section>
     </form>
-    <div class="top-control-150" onclick="dealThis(event)" style="padding-bottom: 40px">
+    <div class="box" style="height: 300px">
+        <div class="left_box" style="width: 200px" onclick="dealThis(event)"></div>
         <!--提交当前表单切记 要传入form id -->
-        <a href="javascript:void(0)" onclick="submit('payOrder')" class="big-font-50 big-button-blue">
-            Payment</a>
-    </div>
+        <div class="center_box">
+            <div style="height: 160px" onclick="dealThis(event)">
 
+            </div>
+            <a href="javascript:void(0)" onclick="submit('payOrder')" class="big-font-50 big-button-blue">
+                Payment</a>
+            <div style="height: 40px" onclick="dealThis(event)">
+
+            </div>
+        </div>
+        <div class="right_box" onclick="dealThis(event)" style="width: 200px" onclick="dealThis(event)">
+        </div>
+    </div>
     <div class="row key-border-customer-hide" id="keyBorderM">
         <div class="col-sm-12">
             <div class="col-sm-4 key-border-c-right key-border-c-bottom event-click">1</div>
